@@ -8,7 +8,7 @@ services:
       PLUGINS_FILE: /extra/plugins.txt
       REPLACE_ENV_VARIABLES: "true" # enable env var replacement
       REPLACE_ENV_VARIABLE_PREFIX: "CFG_" # prefix for variables to replace
-      REPLACE_ENV_SUFFIXES: ".secret"
+      REPLACE_ENV_SUFFIXES: "secret"
       CFG_VELOCITY_FORWARDING_SECRET: "${CFG_VELOCITY_FORWARDING_SECRET}"
     ports:
       - "25565:25565/tcp"
