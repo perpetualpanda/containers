@@ -17,7 +17,7 @@ services:
       - ./config/plugins.txt:/extra/plugins.txt
       - ./config/server-icon.png:/server/server-icon.png
       - ./config/velocity.toml:/server/velocity.toml
-      - mc-proxy-server:/server
+      - server:/server
 
 volumes:
-  mc-proxy-server:
+  server:
