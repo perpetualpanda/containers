@@ -12,11 +12,11 @@ services:
     ports:
       - "25565:25565/tcp"
     volumes:
-      - ./config/bstats-config.txt:/server/plugins/bStats/config.txt
-      - ./config/forwarding.secret:/config/forwarding.secret
-      - ./config/plugins.txt:/extra/plugins.txt
-      - ./config/server-icon.png:/server/server-icon.png
-      - ./config/velocity.toml:/server/velocity.toml
+      - ./config/forwarding-secret.cfg:/config/forwarding-secret.cfg:ro # must end in .cfg for env replacement to pick up
+      - ./config/bstats-config.txt:/server/plugins/bStats/config.txt:ro
+      - ./config/plugins.txt:/extra/plugins.txt:ro
+      - ./config/server-icon.png:/server/server-icon.png:ro
+      - ./config/velocity.toml:/server/velocity.toml:ro
       - mc-proxy-server:/server
 
 volumes:
