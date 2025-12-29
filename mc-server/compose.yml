@@ -15,7 +15,10 @@ services:
       CFG_VELOCITY_ENABLED: "true"
       CFG_VELOCITY_FORWARDING_SECRET_FILE: "/run/secrets/velocity_forwarding_secret"
       CFG_VELOCITY_ONLINE_MODE: "true"
-      CFG_WHITELIST_FILE: "/run/secrets/whitelist"
+      CFG_WHITELIST_FILE: "/run/secrets/whitelist.json"
+      CFG_DISCORD_SRV_BOT_AUTH_TOKEN_FILE: "/run/secrets/discord_bot_auth_token"
+      CFG_DISCORD_SRV_BOT_CHANNEL_ID_FILE: "/run/secrets/discord_bot_channel_id"
+      CFG_DISCORD_INVITE_LINK_FILE: "/run/secrets/discord_invite_link"
 
       # server launch options
       TYPE: "PAPER"
@@ -48,6 +51,9 @@ services:
       - rcon_password
       - velocity_forwarding_secret
       - whitelist.json
+      - discord_bot_auth_token
+      - discord_bot_channel_id
+      - discord_invite_link
 
 volumes:
   data:
@@ -59,3 +65,9 @@ secrets:
     environment: VELOCITY_FORWARDING_SECRET
   whitelist.json:
     environment: MINECRAFT_SERVER_WHITELIST_JSON
+  discord_bot_auth_token:
+    environment: MINECRAFT_SERVER_DISCORD_SRV_BOT_TOKEN
+  discord_bot_channel_id:
+    environment: MINECRAFT_SERVER_DISCORD_SRV_CHANNEL_ID
+  discord_invite_link:
+    environment: MINECRAFT_SERVER_DISCORD_INVITE_LINK
