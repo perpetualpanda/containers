@@ -2,23 +2,33 @@ services:
   mc-proxy:
     image: itzg/mc-proxy:latest
     environment:
+      REPLACE_ENV_VARIABLES: "true" # enable env var replacement
+      REPLACE_ENV_DURING_SYNC: "true" # also replce env vars in synced directories
+      REPLACE_ENV_VARIABLE_PREFIX: "CFG_" # prefix for variables to replace
+      REPLACE_ENV_SUFFIXES: "secret" # manually override replacement suffixes
+
+      # define env var replacements
+      CFG_BSTATS_ENABLED: "false"
+      CFG_VELOCITY_PROXY_FORWARDING_SECRET_FILE: "/run/secrets/velocity_proxy_forwarding_secret"
+
+      # configure proxy server
       TYPE: VELOCITY
-      DEBUG: "false"
       ENABLE_RCON: "true"
       PLUGINS_FILE: /extra/plugins.txt
-      REPLACE_ENV_VARIABLES: "true" # enable env var replacement
-      REPLACE_ENV_VARIABLE_PREFIX: "CFG_" # prefix for variables to replace
-      REPLACE_ENV_SUFFIXES: "secret"
-      CFG_VELOCITY_FORWARDING_SECRET: "${CFG_VELOCITY_FORWARDING_SECRET}"
+
     ports:
       - "25565:25565/tcp"
     volumes:
-      - ./config/forwarding.secret:/server/forwarding.secret
-      - ./config/bstats-config.txt:/server/plugins/bStats/config.txt
-      - ./config/plugins.txt:/extra/plugins.txt
-      - ./config/server-icon.png:/server/server-icon.png
-      - ./config/velocity.toml:/server/velocity.toml
+      - ./config:/config:ro
+      - ./plugins:/plugins:ro
+      - ./extra:/extra:ro
       - server:/server
+    secrets:
+      - velocity_proxy_forwarding_secret
 
 volumes:
   server:
+
+secrets:
+  velocity_proxy_forwarding_secret:
+    environment: MINECRAFT_SERVER_VELOCITY_PROXY_FORWARDING_SECRET
