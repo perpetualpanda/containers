@@ -1,0 +1,61 @@
+services:
+  mc-server:
+    image: itzg/minecraft-server:latest
+    ports:
+      - "25565:25565"
+    environment:
+      SYNC_SKIP_NEWER_IN_DESTINATION: "false" # overwrite dest with synced files
+      REPLACE_ENV_VARIABLES: "true" # for files in /data
+      REPLACE_ENV_DURING_SYNC: "true" # for files in /plugins, /config, /mods
+      REPLACE_ENV_VARIABLE_PREFIX: "CFG_" # prefix for variables to replace
+
+      # define env variable replacements
+      CFG_BSTATS_ENABLED: "false"
+      CFG_RCON_PASSWORD_FILE: "/run/secrets/rcon_password"
+      CFG_VELOCITY_ENABLED: "true"
+      CFG_VELOCITY_FORWARDING_SECRET_FILE: "/run/secrets/velocity_forwarding_secret"
+      CFG_VELOCITY_ONLINE_MODE: "true"
+      CFG_WHITELIST_FILE: "/run/secrets/whitelist"
+
+      # server launch options
+      TYPE: "PAPER"
+      VERSION: "1.21.10"
+      MEMORY: "16G"
+      SNOOPER_ENABLED: "false"
+      EULA: "true"
+
+      # server properties
+      DIFFICULTY: "hard"
+      ENABLE_WHITELIST: "true"
+      LOG_IPS: "true"
+      MAX_PLAYERS: "30"
+      ONLINE_MODE: "false" # disable auth (velocity proxy)
+      RCON_PASSWORD: "$${CFG_RCON_PASSWORD}"
+      SPAWN_PROTECTION: "0"
+
+      # whitelist config
+      EXISTING_WHITELIST_FILE: "SYNC_FILE_MERGE_LIST"
+      WHITELIST_FILE: "/run/secrets/whitelist.json"
+
+    volumes:
+      - ./plugins:/plugins:ro
+      - ./config:/config:ro
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+      - data:/data
+
+    secrets:
+      - rcon_password
+      - velocity_forwarding_secret
+      - whitelist.json
+
+volumes:
+  data:
+
+secrets:
+  rcon_password:
+    environment: MINECRAFT_SERVER_RCON_PASSWORD
+  velocity_forwarding_secret:
+    environment: VELOCITY_FORWARDING_SECRET
+  whitelist.json:
+    environment: MINECRAFT_SERVER_WHITELIST_JSON
