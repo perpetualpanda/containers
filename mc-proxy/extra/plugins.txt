@@ -1,1 +1,2 @@
 https://cdn.modrinth.com/data/7IbzD4Zm/versions/WWMcgXlj/SignedVelocity-Proxy-1.4.1.jar
+https://hangarcdn.papermc.io/plugins/code-lime/velocircon/versions/1.0.5/VELOCITY/Velocircon-1.0.5.jar
