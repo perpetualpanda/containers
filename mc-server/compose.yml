@@ -43,8 +43,6 @@ services:
     volumes:
       - ./plugins:/plugins:ro
       - ./config:/config:ro
-      - /etc/localtime:/etc/localtime:ro
-      - /etc/timezone:/etc/timezone:ro
       - data:/data
 
     secrets:
