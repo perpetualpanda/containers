@@ -32,6 +32,7 @@ services:
         chestsorter:Mz8Y13SL
         discordsrv:F6jtq5uF
         essentialsx:Oa9ZDzZq
+        luckperms:OrIs0S6b
 
       # server properties
       DIFFICULTY: "hard"
