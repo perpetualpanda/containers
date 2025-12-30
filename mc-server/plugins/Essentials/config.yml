@@ -257,33 +257,30 @@ mute-commands:
 # These are the permissions without the 'essentials.' part.
 #
 # To enable this feature, ensure 'use-bukkit-permissions' below is set to false.
-player-commands:
-  - chestsorter.middleclick.sort
-  - chestsorter.sneak.sort
-  - chestsorter.sort.player.self
-  - back
-  - back.onteleport
-  - home
-  - home.bed
-  - tpa
-  - tpaccept
-  - tpdeny
-  - playtime
-  - playtime.others
-  - afk.auto
-  - depth
-  - getpos
-  - help
-  - list
-  - nick
-  - realname
-  - seen
-  - time
+# player-commands:
+#   - back
+#   - back.onteleport
+#   - home
+#   - home.bed
+#   - tpa
+#   - tpaccept
+#   - tpdeny
+#   - playtime
+#   - playtime.others
+#   - afk.auto
+#   - depth
+#   - getpos
+#   - help
+#   - list
+#   - nick
+#   - realname
+#   - seen
+#   - time
 
 # Use this option to force superperms-based permissions handler regardless of detected installed perms plugin.
 # This is useful if you want superperms-based permissions (with wildcards) for custom permissions plugins.
 # If you wish to use Essentials' built-in permissions using the 'player-commands' section above, set this to false.
-use-bukkit-permissions: false
+use-bukkit-permissions: true
 
 # When this option is enabled, one-time use kits (i.e., delay < 0) will be
 # removed from '/kit list' when a player can no longer use them.

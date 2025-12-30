@@ -1,0 +1,29 @@
+groups:
+  default:
+    permissions:
+      # EssentialsX
+      essentials.back: true
+      essentials.back.onteleport: true
+      essentials.home: true
+      essentials.home.bed: true
+      essentials.tpa: true
+      essentials.tpaccept: true
+      essentials.tpdeny: true
+      essentials.playtime: true
+      essentials.playtime.others: true
+      essentials.afk.auto: true
+      essentials.depth: true
+      essentials.getpos: true
+      essentials.help: true
+      essentials.list: true
+      essentials.nick: true
+      essentials.realname: true
+      essentials.seen: true
+      essentials.time: true
+
+      # ChestSorter
+      chestsorter.middleclick.sort: true
+      chestsorter.sneak.sort: true
+      chestsorter.sort.player.self: true
+
+users: {}
