@@ -3,6 +3,7 @@ services:
     image: itzg/minecraft-server:latest
     ports:
       - "25565:25565"
+      - "25575:25575"
     environment:
       SYNC_SKIP_NEWER_IN_DESTINATION: "false" # overwrite dest with synced files
       REPLACE_ENV_VARIABLES: "true" # for files in /data
