@@ -28,6 +28,11 @@ services:
       SNOOPER_ENABLED: "false"
       EULA: "true"
 
+      MODRINTH_PROJECTS: |
+        chestsorter:Mz8Y13SL
+        discordsrv:F6jtq5uF
+        essentialsx:Oa9ZDzZq
+
       # server properties
       DIFFICULTY: "hard"
       ENABLE_WHITELIST: "true"
