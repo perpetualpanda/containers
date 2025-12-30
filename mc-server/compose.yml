@@ -44,7 +44,7 @@ services:
     volumes:
       - ./plugins:/plugins:ro
       - ./config:/config:ro
-      - data:/data
+      - /mnt/minecraft:/data
 
     secrets:
       - rcon_password
@@ -53,9 +53,6 @@ services:
       - discord_bot_auth_token
       - discord_bot_channel_id
       - discord_invite_link
-
-volumes:
-  data:
 
 secrets:
   rcon_password:
