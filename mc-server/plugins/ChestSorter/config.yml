@@ -36,18 +36,9 @@ blacklist:
   # Available vanilla types: minecraft:chest, minecraft:barrel, minecraft:hopper,
   #                          minecraft:dropper, minecraft:dispenser, minecraft:shulker_box, etc.
   container-types:
-    - "minecraft:blast_furnace"
-    - "minecraft:brewing_stand"
-    - "minecraft:campfire"
     - "minecraft:dispenser"
     - "minecraft:dropper"
-    - "minecraft:furnace"
-    - "minecraft:hopper_minecart"
     - "minecraft:hopper"
-    - "minecraft:lectern"
-    - "minecraft:shulker_box"
-    - "minecraft:smoker"
-    - "minecraft:trapped_chest"
 
 # Messages
 messages:
