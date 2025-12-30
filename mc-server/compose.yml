@@ -50,7 +50,6 @@ services:
     volumes:
       - ./plugins:/plugins:ro
       - ./config:/config:ro
-      - ./data/permissions.yml:/data/permission.yml
       - /mnt/minecraft:/data
 
     secrets:
