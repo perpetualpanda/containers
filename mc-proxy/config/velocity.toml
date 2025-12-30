@@ -70,7 +70,8 @@ enable-player-address-logging = true
 [servers]
 # Configure your servers here. Each key represents the server's name, and the value
 # represents the IP address of the server to connect to.
-meme_central_forever = "192.168.0.100:25565"
+meme_central_forever = "192.168.0.101:25565"
+meme_central_forever_test = "192.168.0.100:25565"
 
 # In what order we should try servers when a player logs in or is kicked from a server.
 try = [
@@ -81,6 +82,10 @@ try = [
 # Configure your forced hosts here.
 "mc.ppanda.org" = [
   "meme_central_forever"
+]
+
+"mc-test.ppanda.org" = [
+  "meme_central_forever_test"
 ]
 
 [advanced]
