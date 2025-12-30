@@ -29,7 +29,7 @@ services:
       EULA: "true"
 
       MODRINTH_PROJECTS: |
-        chestsorter:Mz8Y13SL
+        chestsort:jOP2uPPT
         discordsrv:F6jtq5uF
         essentialsx:Oa9ZDzZq
 
