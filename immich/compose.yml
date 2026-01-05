@@ -2,7 +2,7 @@ name: immich
 
 # common immich env vars
 x-immich-env: &immich-env
-  DATABASE_NAME: ${DATABASE_NAME}
+  DB_DATABASE_NAME: ${DB_DATABASE_NAME}
   DB_DATA_LOCATION: ${DB_DATA_LOCATION}
   DB_PASSWORD: ${DB_PASSWORD}
   DB_USERNAME: ${DB_USERNAME}
