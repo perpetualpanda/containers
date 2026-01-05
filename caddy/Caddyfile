@@ -1,5 +1,5 @@
-mc.ppanda.org:443 {
-    reverse_proxy http://192.168.0.100:25566
+mc.ppanda.org {
+    reverse_proxy 192.168.0.100:25566
 }
 
 nas.ppanda.org:443 {
