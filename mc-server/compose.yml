@@ -38,6 +38,7 @@ services:
       ENABLE_WHITELIST: "true"
       LOG_IPS: "true"
       MAX_PLAYERS: "30"
+      MOTD: "Meme Central Forever Server"
       ONLINE_MODE: "false" # disable auth (velocity proxy)
       RCON_PASSWORD: "$${CFG_RCON_PASSWORD}"
       SPAWN_PROTECTION: "0"
