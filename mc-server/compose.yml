@@ -60,12 +60,12 @@ services:
       - discord_invite_link
 
 secrets:
+  whitelist.json:
+    file: ./whitelist.json
   rcon_password:
     environment: MINECRAFT_SERVER_RCON_PASSWORD
   velocity_proxy_forwarding_secret:
     environment: MINECRAFT_SERVER_VELOCITY_PROXY_FORWARDING_SECRET
-  whitelist.json:
-    environment: MINECRAFT_SERVER_WHITELIST_JSON
   discord_bot_auth_token:
     environment: MINECRAFT_SERVER_DISCORD_BOT_AUTH_TOKEN
   discord_bot_channel_id:
