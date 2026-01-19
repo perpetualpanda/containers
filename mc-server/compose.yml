@@ -6,6 +6,7 @@ services:
       - "25566:8123/tcp"  # dynmap
       - "25575:25575/tcp" # mc-rcon
     environment:
+      SKIP_CHOWN_DATA: "true" # skip chown -r command on startup
       SYNC_SKIP_NEWER_IN_DESTINATION: "false" # overwrite dest with synced files
       REPLACE_ENV_VARIABLES: "true" # for files in /data
       REPLACE_ENV_DURING_SYNC: "true" # for files in /plugins, /config, /mods
