@@ -24,7 +24,7 @@ services:
 
       # server launch options
       TYPE: "PAPER"
-      VERSION: "1.21.10"
+      VERSION: "1.21.11"
       MEMORY: "16G"
       SNOOPER_ENABLED: "false"
       EULA: "true"
