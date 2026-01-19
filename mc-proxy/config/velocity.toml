@@ -4,7 +4,7 @@ config-version = "2.7"
 bind = "0.0.0.0:25565"
 
 # Server list message of the day
-motd = "<aqua>                 mc.ppanda.org <red>[1.21.10]<reset>\n<dark_green>             Meme Central Forever Server"
+motd = "<aqua>                 mc.ppanda.org <red>[1.21.11]<reset>\n<dark_green>             Meme Central Forever Server"
 
 # Max player display (does not control actual limit, keep in sync with server backend)
 show-max-players = 30
