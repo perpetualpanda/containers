@@ -1,6 +1,18 @@
 services:
+  bluemap:
+    image: ghcr.io/bluemap-minecraft/bluemap:v5.20
+    command: -r -u -w
+    ports:
+      - '8100:8100'
+    volumes:
+      - '/data/minecraft/config:/app/config'
+      - '/data/minecraft/world:/app/world'
+      - '/data/minecraft/world_nether:/app/world_nether'
+      - '/data/minecraft/world_the_end:/app/world_the_end'
+      - '/data/bluemap/data:/app/data'
+      - '/data/bluemap/web:/app/web'
   mc-server:
-    image: itzg/minecraft-server:latest
+    image: itzg/minecraft-server:stable
     ports:
       - "25565:25565/tcp" # game
       - "25566:8123/tcp"  # dynmap
@@ -51,7 +63,7 @@ services:
     volumes:
       - ./plugins:/plugins:ro
       - ./config:/config:ro
-      - /mnt/minecraft:/data
+      - /data/minecraft:/data
 
     secrets:
       - rcon_password
