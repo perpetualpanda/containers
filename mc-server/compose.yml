@@ -8,7 +8,7 @@ services:
     ports:
       - '8100:8100'
     volumes:
-      - './config:/app/config'
+      - './bluemap:/app/config'
       - '/data/minecraft/world:/app/world'
       - '/data/minecraft/world_nether:/app/world_nether'
       - '/data/minecraft/world_the_end:/app/world_the_end'
