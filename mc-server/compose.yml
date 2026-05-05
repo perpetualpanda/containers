@@ -1,6 +1,22 @@
 services:
+  bluemap:
+    image: ghcr.io/bluemap-minecraft/bluemap:v5.20
+    command: -r -u -w
+    restart: unless-stopped
+    depends_on:
+      - mc-server
+    ports:
+      - '8100:8100'
+    volumes:
+      - './bluemap:/app/config'
+      - '/data/minecraft/world:/app/world'
+      - '/data/minecraft/world_nether:/app/world_nether'
+      - '/data/minecraft/world_the_end:/app/world_the_end'
+      - '/data/bluemap/data:/app/data'
+      - '/data/bluemap/web:/app/web'
   mc-server:
-    image: itzg/minecraft-server:latest
+    image: itzg/minecraft-server:stable
+    restart: unless-stopped
     ports:
       - "25565:25565/tcp" # game
       - "25566:8123/tcp"  # dynmap
@@ -26,12 +42,12 @@ services:
       # server launch options
       TYPE: "PAPER"
       VERSION: "1.21.11"
-      MEMORY: "16G"
+      MEMORY: "4G"
       SNOOPER_ENABLED: "false"
       EULA: "true"
 
       MODRINTH_PROJECTS: |
-        discordsrv:F6jtq5uF
+        discordsrv:ATlquwiT
         essentialsx:Oa9ZDzZq
 
       # server properties
@@ -51,7 +67,7 @@ services:
     volumes:
       - ./plugins:/plugins:ro
       - ./config:/config:ro
-      - /mnt/minecraft:/data
+      - /data/minecraft:/data
 
     secrets:
       - rcon_password

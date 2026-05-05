@@ -1,6 +1,7 @@
 services:
   mc-proxy:
     image: itzg/mc-proxy:latest
+    restart: unless-stopped
     environment:
       REPLACE_ENV_VARIABLES: "true" # enable env var replacement
       REPLACE_ENV_DURING_SYNC: "true" # also replce env vars in synced directories
