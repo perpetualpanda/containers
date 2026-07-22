@@ -1,6 +1,6 @@
 services:
   mc-proxy:
-    image: itzg/mc-proxy:latest
+    image: itzg/mc-proxy:java25
     restart: unless-stopped
     environment:
       REPLACE_ENV_VARIABLES: "true" # enable env var replacement
